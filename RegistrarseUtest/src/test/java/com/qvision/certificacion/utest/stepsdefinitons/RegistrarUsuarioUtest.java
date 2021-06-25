@@ -4,10 +4,13 @@ import com.qvision.certificacion.utest.tasks.RegistrarUsuario;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 
 import java.util.List;
 import java.util.Map;
 
+import static com.qvision.certificacion.utest.util.Constantes.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class RegistrarUsuarioUtest extends GeneralStepDefinitions{
@@ -23,14 +26,12 @@ public class RegistrarUsuarioUtest extends GeneralStepDefinitions{
         theActorInTheSpotlight().attemptsTo(RegistrarUsuario.con(datosRegistro));
     }
 
-    @Cuando("^se puede ver que el registro es exitoso$")
-    public void sePuedeVerQueElRegistroEsExitoso() {
-
-    }
-
-    @Entonces("^inicio sesion para validar registro exitoso$")
-    public void inicioSesionParaValidarRegistroExitoso() {
-
+    @Entonces("^procedo a validar titulos$")
+    public void procedoAValidarTitulos() {
+        Assert.assertThat(theActorInTheSpotlight().recall(titulo1), Matchers.is("Tell us about yourself"));
+        Assert.assertThat(theActorInTheSpotlight().recall(titulo2), Matchers.is("Add your address"));
+        Assert.assertThat(theActorInTheSpotlight().recall(titulo3), Matchers.is("Tell us about your devices"));
+        Assert.assertThat(theActorInTheSpotlight().recall(titulo4), Matchers.is("The last step"));
     }
 
 }

@@ -10,5 +10,4 @@
     Cuando Procedo a realizar el registro e ingreso los datos
       |nombre|apellido|correo|med|dia|anno|contrasena|
       |jairo| Andres|jairo.garcia@hotmail.com|November|28|1992|Andres12345.|
-    Y se puede ver que el registro es exitoso
-    Entonces inicio sesion para validar registro exitoso
+    Entonces procedo a validar titulos
